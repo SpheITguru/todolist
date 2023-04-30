@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block title %}Sign up{% endblock %} {% block
+content %} <br /><br />
+<div class="container">
+  <h1 class="d-flex justify-content-center">Sign up</h1>
+  <br />
+  <div class="d-flex justify-content-center">
+    <form action="/signup" method="post">
+      <label>Username:</label>
+      <input type="text" name="username" required /><br /><br />
+      <label>Password:</label>
+      <input type="password" name="password" required /><br /><br />
+      <button type="submit" class="btn btn-primary">Sign up</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

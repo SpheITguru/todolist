@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% block title %}Dashboard{% endblock %} {% block
+content %}
+<div class="d-flex justify-content-center">
+  <img
+    src="{{ url_for('static', filename='images/sushi.jpg') }}"
+    class="img-fluid"
+    alt="..."
+    width="60%"
+  />
+</div>
+<div class="container">
+  <h1 class="d-flex justify-content-center">Todo List</h1>
+  <br />
+  <div class="d-flex justify-content-center">
+    <form action="/add-item" method="post">
+      <input type="text" name="todo-item" placeholder="Add new item" />
+      <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+  </div>
+  <br />
+  <div class="d-flex justify-content-center">
+    <table>
+      {% for item in todo_list %}
+      <tr>
+        <th>{{ item }}</th>
+        <th>
+          <form action="/delete-item/{{ loop.index0 }}" method="get">
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </form>
+        </th>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+{% endblock %}

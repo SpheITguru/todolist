@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block title %}Home{% endblock %} {% block content
+%} <br /><br />
+<div class="container">
+  <h1 class="d-flex justify-content-center">Welcome to the Flask Todo App</h1>
+  <p class="d-flex justify-content-center">
+    Click the button below to get started:
+  </p>
+  <a class="d-flex justify-content-center" href="/dashboard"
+    ><button type="button" class="btn btn-primary">Dashboard</button></a
+  >
+  <br />
+  <div class="d-flex justify-content-center">
+    <img
+      src="{{ url_for('static', filename='images/courier.jpg') }}"
+      class="img-fluid"
+      alt="..."
+      width="50%"
+    />
+  </div>
+</div>
+{% endblock %}
