@@ -6,6 +6,8 @@ RUN pip3 install Flask
 
 WORKDIR /app
 
+EXPOSE 5000
+
 COPY . .
 
 CMD [ "python3", "-m", "flask", "run", "--host=0.0.0.0"]
